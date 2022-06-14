@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comcode">
+	<resultMap type="com.spring.board.vo.ComcodeVO" id="comVo">
+    	<result property="codeType" 	column="CODE_TYPE"/>
+    	<result property="codeId" 		column="CODE_ID"/>
+    	<result property="codeName" 	column="CODE_NAME"/>
+    </resultMap>
+    	
+
+	<select id="boardType" parameterType="com.spring.board.vo.ComcodeVO" resultMap="comVo">
+		select 
+			code_id,
+			code_name 
+		from 
+			com_code 
+		where 
+			code_type='menu'
+	</select>
+	
+</mapper>
+

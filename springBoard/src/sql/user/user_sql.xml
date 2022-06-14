@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	<resultMap type="com.spring.board.vo.UserVO" id="uservo">
+    	<result property="id" 		column="USER_ID"/>
+    	<result property="pass" 	column="USER_PW"/>
+    	<result property="name" 	column="USER_NAME"/>
+    	<result property="tel1" 	column="USER_PHONE1"/>
+    	<result property="tel2" 	column="USER_PHONE2"/>
+    	<result property="tel3" 	column="USER_PHONE3"/>
+    	<result property="addr1" 	column="USER_ADDR1"/>
+    	<result property="addr2" 	column="USER_ADDR2"/>
+    	<result property="company" 	column="USER_COMPANY"/>
+    </resultMap>
+
+	<select id="chkUser" parameterType="com.spring.board.vo.UserVO" resultType="INT">
+		select count(*)
+		from user_info
+		where user_id = #{id}
+	</select>
+	
+</mapper>
+
